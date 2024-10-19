@@ -1,0 +1,226 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    animation: zoomIn 0.6s ease-in-out;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    animation: slideDown 0.5s ease-in-out;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 0.7rem;
+    margin-right: 0.5rem;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    transition: border-color 0.3s, transform 0.2s;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#todo-input:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 123, 255, 0.3);
+    transform: scale(1.03);
+}
+
+#todo-input.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+.btn {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3);
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+#todo-list li {
+    background: #f4f4f4;
+    padding: 0.7rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.4s ease-in-out;
+}
+
+#todo-list li.completed {
+    text-decoration: line-through;
+    background: #d4edda;
+    color: #555;
+    transition: background-color 0.5s;
+}
+
+#todo-list li:hover {
+    background: #e3e3e3;
+    transform: scale(1.02);
+}
+
+#todo-list li button {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 0.3rem 0.5rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#todo-list li button:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+}
+
+#clear-all {
+    background: #6c757d;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 1rem auto 0;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#clear-all:hover {
+    background: #5a6268;
+    transform: scale(1.05);
+}
+
+.notification {
+    text-align: center;
+    background: #28a745;
+    color: #fff;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: none;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
